@@ -1,84 +1,76 @@
 :root {
   --texto: #1b1340;
   --amarelo: #ffd84d;
+}
 
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
 
 body {
-    background-color: #f2efff;
-    color: var(--texto);
+  background-color: #f2efff;
+  color: var(--texto);
+  padding: 20px 16px;
 }
-
 
 .menu {
   background: white;
-  border:1.5px solid rgba(188,210,255,.8);
   border-radius: 999px;
-  width: 1100px;
-  height: 90px;
-  position: absolute;
-  top: 6%;
-  left: 10%;
-  border-color: transparent;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 20px 14px 32px;
+
+  display: flex;
+  justify-content: space-between;  
+  align-items: center;
+  gap: 16px;
 }
 
 .logo {
   font-family: "Bricolage Grotesque", Arial, sans-serif;
-    text-align: center;
-    font-size: 230%;
-    margin-top: 1.8%;
-    margin-left: -90%;
+  font-size: 230%;
 }
 
-
-
-.title {
-  font-family: "Bricolage Grotesque", Arial, sans-serif;
-    text-align: center;
-    font-size: 60px;
-     margin-top:200px;
+.botoes {
+  display: flex;
+  gap: 12px;
 }
 
 .domestico, .indus, .distan {
   background-color: var(--texto);
   color: var(--amarelo);
-  font-weight: 600px;
+  font-weight: 600;
   font-size: 16px;
-  padding: 18px 28px;
+  padding: 14px 24px;
   border-radius: 999px;
   border: transparent;
-  position: absolute;
-  left: 720px;
-  top: 17px;
   cursor: pointer;
 }
 
-.indus {
-  position: absolute;
-  left: 450px;
-}
-
-.distan {
-  position: absolute;
-  left: 180px;
-}
-
-.distan:hover {
+.domestico:hover, .indus:hover, .distan:hover {
   opacity: 0.85;
 }
 
-.indus:hover {
-  opacity: 0.85;
-}
 
-.domestico:hover {
-  opacity: 0.85;
+.title {
+  font-family: "Bricolage Grotesque", Arial, sans-serif;
+  text-align: center;
+  font-size: 60px;
+  margin-top: 100px;
 }
 
 .exemplo {
   font-size: 25px;
   font-family: "Bricolage Grotesque", Arial, sans-serif;
   text-align: center;
+  margin-top: 24px;
+}
+
+
+.area-botao {
+  text-align: center;   
+  margin-top: 40px;
 }
 
 .conhe {
@@ -86,14 +78,46 @@ body {
   background-color: var(--amarelo);
   color: var(--texto);
   border-radius: 999px;
-  border-color: transparent;
+  border: transparent;
   font-size: 30px;
   width: 330px;
+  max-width: 100%;      
   height: 60px;
-  position: absolute;
-  left: 500px; 
+  cursor: pointer;
 }
 
 .conhe:hover {
   opacity: 0.85;
+}
+
+
+@media (max-width: 800px) {
+  .menu {
+    flex-direction: column;    
+    border-radius: 32px;
+    padding: 20px;
+  }
+
+  .botoes {
+    flex-wrap: wrap;            
+    justify-content: center;
+  }
+
+  .domestico, .indus, .distan {
+    font-size: 14px;
+    padding: 12px 18px;
+  }
+
+  .title {
+    font-size: 36px;
+    margin-top: 60px;
+  }
+
+  .exemplo {
+    font-size: 18px;
+  }
+
+  .conhe {
+    font-size: 24px;
+  }
 }
